@@ -15,6 +15,13 @@ defmodule LokalioWeb.Endpoint do
     websocket: [connect_info: [session: @session_options]],
     longpoll: [connect_info: [session: @session_options]]
 
+  socket "/socket", LokalioWeb.UserSocket,
+    websocket: true,
+    longpoll: false
+
+  socket "/absinthe/socket", Absinthe.Phoenix.Socket,
+    websocket: [path: "/", subprotocols: ["absinthe"]]
+
   # Serve at "/" the static files from "priv/static" directory.
   #
   # When code reloading is disabled (e.g., in production),

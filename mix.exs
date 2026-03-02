@@ -66,7 +66,44 @@ defmodule Lokalio.MixProject do
       {:gettext, "~> 1.0"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.2.0"},
-      {:bandit, "~> 1.5"}
+      {:bandit, "~> 1.5"},
+
+      # GraphQL - Absinthe stack
+      {:absinthe, "~> 1.7"},
+      {:absinthe_plug, "~> 1.5"},
+      {:absinthe_phoenix, "~> 2.0"},   # subscriptions via Phoenix Channels
+      {:dataloader, "~> 2.0"},         # N+1 queries resolver
+
+      # Auth JWT
+      {:guardian, "~> 2.3"},
+      {:bcrypt_elixir, "~> 3.0"},
+
+      # Upload images (logo, photos business)
+      {:waffle, "~> 1.1"},
+      {:waffle_ecto, "~> 0.0.11"},
+      {:ex_aws, "~> 2.5"},             # S3 ou compatible (optionnel)
+      {:ex_aws_s3, "~> 2.5"},
+
+      # QR Code generation
+      {:eqrcode, "~> 0.2"},
+
+      # Géolocalisation / calcul distance
+      {:geo, "~> 3.6"},
+      {:geo_postgis, "~> 3.7"},        # PostGIS pour requêtes géo PostgreSQL
+
+      # Push notifications (phase 2, FCM)
+      {:pigeon, "~> 2.0"},             # FCM / APNs
+
+      # Pagination
+      {:absinthe_relay, "~> 1.5"},     # Relay-style pagination
+
+      # Dev / test
+      {:phoenix_live_reload, "~> 1.2", only: :dev},
+      {:excoveralls, "~> 0.18", only: :test},
+      {:ex_machina, "~> 2.8", only: [:dev, :test]},
+      {:faker, "~> 0.18", only: [:dev, :test]},
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.4", only: [:dev], runtime: false}
     ]
   end
 
