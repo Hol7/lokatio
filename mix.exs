@@ -71,17 +71,20 @@ defmodule Lokalio.MixProject do
       # GraphQL - Absinthe stack
       {:absinthe, "~> 1.7"},
       {:absinthe_plug, "~> 1.5"},
-      {:absinthe_phoenix, "~> 2.0"},   # subscriptions via Phoenix Channels
-      {:dataloader, "~> 2.0"},         # N+1 queries resolver
+      # subscriptions via Phoenix Channels
+      {:absinthe_phoenix, "~> 2.0"},
+      # N+1 queries resolver
+      {:dataloader, "~> 2.0"},
 
       # Auth JWT
       {:guardian, "~> 2.3"},
-      {:bcrypt_elixir, "~> 3.0"},
+      # {:bcrypt_elixir, "~> 3.0"},
 
       # Upload images (logo, photos business)
       {:waffle, "~> 1.1"},
       {:waffle_ecto, "~> 0.0.11"},
-      {:ex_aws, "~> 2.5"},             # S3 ou compatible (optionnel)
+      # S3 ou compatible (optionnel)
+      {:ex_aws, "~> 2.5"},
       {:ex_aws_s3, "~> 2.5"},
 
       # QR Code generation
@@ -89,16 +92,19 @@ defmodule Lokalio.MixProject do
 
       # Géolocalisation / calcul distance
       {:geo, "~> 3.6"},
-      {:geo_postgis, "~> 3.7"},        # PostGIS pour requêtes géo PostgreSQL
+      # PostGIS pour requêtes géo PostgreSQL
+      {:geo_postgis, "~> 3.7"},
 
       # Push notifications (phase 2, FCM)
-      {:pigeon, "~> 2.0"},             # FCM / APNs
+      # FCM / APNs
+      {:pigeon, "~> 2.0"},
 
       # Pagination
-      {:absinthe_relay, "~> 1.5"},     # Relay-style pagination
+      # Relay-style pagination
+      {:absinthe_relay, "~> 1.5"},
 
       # Dev / test
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
+      # {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:excoveralls, "~> 0.18", only: :test},
       {:ex_machina, "~> 2.8", only: [:dev, :test]},
       {:faker, "~> 0.18", only: [:dev, :test]},
